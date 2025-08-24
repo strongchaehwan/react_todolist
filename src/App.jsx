@@ -39,11 +39,25 @@ function App() {
     setTodos([newTodo, ...todos]);
   };
 
+  const onUpdate = (targetId) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id == targetId) {
+          return {
+            ...todo,
+            isDone: !todo.isDone,
+          };
+        }
+        return todo;
+      })
+    );
+  };
+
   return (
     <div className="App">
       <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} />
+      <List todos={todos} onUpdate={onUpdate} />
     </div>
   );
 }
