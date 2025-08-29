@@ -13,7 +13,7 @@ function TodoItem({ id, isDone, content, date, onUpdate, onDelete }) {
     <div className="TodoItem">
       <input
         onChange={onChangeCheckBox}
-        readOnly
+        // readOnly
         checked={isDone}
         type="checkbox"
       />

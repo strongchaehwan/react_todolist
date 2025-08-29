@@ -2,6 +2,7 @@ import "./List.css";
 import TodoItem from "./TodoItem";
 import { useState } from "react";
 
+//구조 분해할당
 function List({ todos, onUpdate, onDelete }) {
   const [search, setSearch] = useState("");
 
@@ -10,7 +11,7 @@ function List({ todos, onUpdate, onDelete }) {
   };
 
   const getFilteredData = () => {
-    if (search == "") {
+    if (search === "") {
       return todos;
     }
     return todos.filter((todo) =>

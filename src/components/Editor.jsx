@@ -1,6 +1,7 @@
 import "./Editor.css";
 import { useState, useRef } from "react";
 
+//구조 분해 할당
 function Editor({ onCreate }) {
   const [content, setContent] = useState("");
   const contentRef = useRef();
@@ -10,7 +11,7 @@ function Editor({ onCreate }) {
   };
 
   const onSubmit = () => {
-    if (content == "") {
+    if (content === "") {
       contentRef.current.focus();
       return;
     }
@@ -19,7 +20,7 @@ function Editor({ onCreate }) {
   };
 
   const onKeyDown = (e) => {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       onSubmit();
     }
   };
